@@ -32,16 +32,17 @@ class Auto_NF(Auto):
 
 
 class TextProcessor():
-    def __init__(self, in_string):
+    def __init__(self, in_string,_punktiantian):
         self.in_string=in_string
+        self._punktiantian = None
     @property
     def is_punktiantian(self, i_in_string):
         i=i_in_string
         if i== "." or i== "," or i==":" or i==";" or i=="?" or i=="!" or i=="-" or i=="(" or i==")" or i==" " "
-            self._a=True
+            self._punktiantian=True
         else:
-            self._a=False
-        return self._a
+            self._punktiantian=False
+        return self._punktiantian
     def get_clean_string(self, in_string):
         for i in self.in_string:
             if is_punktiantian(i)==True
